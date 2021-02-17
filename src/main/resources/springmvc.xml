@@ -1,6 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:dubbo="http://www.springframework.org/schema/p"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!--    @Controller-->
+
+    <context:component-scan base-package="cn.edu.zju.rushrushrush.roadmonitorbackend.controller" />
+
+    <aop:aspectj-autoproxy proxy-target-class="true" />
+
+    <!--    load annotation-->
+    <mvc:annotation-driven />
+
+    <!--    <mvc:default-servlet-handler />-->
+<!--    <mvc:resources mapping="/js/**" location="/js/" />-->
+<!--    <mvc:resources mapping="/css/**" location="/css/"/>-->
+<!--    <mvc:resources mapping="/fonts/**" location="/fonts/"/>-->
+<!--    <mvc:resources mapping="/images/**" location="/images/"/>-->
+<!--    <mvc:resources mapping="/font-awesome/**" location="/font-awesome/"/>-->
+<!--    <mvc:resources mapping="/upload/**" location="/upload/"/>-->
+
+    <!--    vierResolver-->
+    <bean id="jspViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/jsp/" />
+        <property name="suffix" value=".jsp" />
+    </bean>
+
+
+    <!--    interceptors-->
+<!--    <mvc:interceptors>-->
+<!--        <mvc:interceptor>-->
+<!--            <mvc:mapping path="/user/-1"/>-->
+<!--            <mvc:mapping path="/collect/**"/>-->
+<!--            <mvc:mapping path="/like/**"/>-->
+<!--            <mvc:mapping path="/comment"/>-->
+<!--            <bean class="cn.edu.zucc.caviar.searchengine.core.interceptor.LoginInterceptor"/>-->
+<!--        </mvc:interceptor>-->
+<!--        <mvc:interceptor>-->
+<!--            <mvc:mapping path="/disable/**"/>-->
+<!--            <mvc:mapping path="/enable/**"/>-->
+<!--            <bean class="cn.edu.zucc.caviar.searchengine.core.interceptor.AdminInterceptor"/>-->
+<!--        </mvc:interceptor>-->
+<!--    </mvc:interceptors>-->
+
+
+    <!--    file upload resolver-->
+<!--    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">-->
+<!--        <property name="defaultEncoding" value="UTF-8"/>-->
+<!--    </bean>-->
+
 
 </beans>
