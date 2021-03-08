@@ -1,0 +1,17 @@
+kafka:
+  brokerAddress: localhost:9092
+  topic: Topic1
+  fooTopic: fooTopic1
+spring:
+  jmx:
+    enabled: false
+redis:
+  host: localhost
+  port: 6379
+  timeout: 3000
+  pool:
+    maxActive: 8
+    minIdle: 1
+    maxIdle: 10
+    maxWait: 3000
+    testOnBorrow: true
